@@ -38,5 +38,5 @@ int counter(const char* dat) {
 }
 int main()
 {
-
+	printf("Unesite ime datoteke: ");
 }
