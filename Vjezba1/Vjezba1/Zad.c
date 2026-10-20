@@ -49,7 +49,13 @@ stud* alocirajIUcitaj(int brojStudenata, const char* dat) {
 
 	for (int i = 0; i < brojStudenata; i++)
 	{
-		fscanf(f, "%s %s %d", studenti[i].name, studenti[i].surname, &studenti[i].points);
+		if (fscanf(f, "%s %s %d", studenti[i].name, studenti[i].surname, &studenti[i].points) != 3)
+		{
+			printf("Greska pri citanju podataka iz datoteke!\n");
+			fclose(f);
+			free(studenti);
+			return NULL;
+		}
 	}
 
 	fclose(f);
