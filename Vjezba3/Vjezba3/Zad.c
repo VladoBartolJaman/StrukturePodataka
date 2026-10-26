@@ -37,24 +37,20 @@ int main()
 	Person head = { "", "", 0, NULL };
 	Position pronadena = NULL;
 
-	// A. Dinamicki dodaje novi element na pocetak liste
 	printf("Dodavanje elemenata na pocetak liste\n");
 	dodajNaPocetak(&head, "Ana", "Anic", 1998);
 	dodajNaPocetak(&head, "Ivo", "Ivic", 1995);
 	printf("Dodani su 'Ana Anic (1998)' i 'Ivo Ivic (1995)'.\n");
 
-	// B. Ispisuje listu
 	printf("\nIspis trenutne liste\n");
 	ispisiListu(head.next);
 
-	// C. Dinamicki dodaje novi element na kraj liste
 	printf("\nDodavanje elemenata na kraj liste\n");
 	dodajNaKraj(&head, "Marko", "Maric", 2000);
 	dodajNaKraj(&head, "Lucija", "Lukic", 2002);
 	printf("Dodani su 'Marko Maric (2000)' i 'Lucija Lukic (2002)'.\n");
 	ispisiListu(head.next);
 
-	// D. Pronalazi element u listi (po prezimenu) - trazi ima li osobe ili nema
 	printf("\nPretraga po prezimenu (provjera ima li osobe ili nema)\n");
 
 	pronadena = pronadiPoPrezimenu(head.next, "Maric");
@@ -77,7 +73,6 @@ int main()
 		printf("Osoba s prezimenom \"Horvat\" ne postoji u listi.\n");
 	}
 
-	// E. Brise odredeni element iz liste
 	printf("\nBrisanje odredenog elementa iz liste\n");
 	printf("Brisanje osobe s prezimenom \"Ivic\":\n");
 	obrisiElement(&head, "Ivic");
@@ -89,31 +84,31 @@ int main()
 	// ============ ZADATAK 3 ============
 
 	// A. Dinamicki dodaje novi element iza odredenog elementa
-	printf("\n--- Zadatak 3A: Dodavanje iza odredenog elementa ---\n");
-	printf("Dodavanje 'Pero Peric (1990)' iza osobe s prezimenom \"Anic\":\n");
+	printf("Zadatak 3A: Dodavanje iza odredenog elementa\n");
+	printf("Dodavanje 'Pero Peric (1990)' iza osobe s prezimenom Anic:\n");
 	dodajIza(&head, "Anic", "Pero", "Peric", 1990);
 	ispisiListu(head.next);
 
 	// B. Dinamicki dodaje novi element ispred odredenog elementa
-	printf("\n--- Zadatak 3B: Dodavanje ispred odredenog elementa ---\n");
-	printf("Dodavanje 'Maja Majic (1997)' ispred osobe s prezimenom \"Maric\":\n");
+	printf("Zadatak 3B: Dodavanje ispred odredenog elementa\n");
+	printf("Dodavanje 'Maja Majic (1997)' ispred osobe s prezimenom Maric:\n");
 	dodajIspred(&head, "Maric", "Maja", "Majic", 1997);
 	ispisiListu(head.next);
 
 	// C. Sortira listu po prezimenima osoba
-	printf("\n--- Zadatak 3C: Sortiranje liste po prezimenu ---\n");
+	printf("Zadatak 3C: Sortiranje liste po prezimenu\n");
 	sortirajListu(&head);
 	printf("Lista nakon sortiranja:\n");
 	ispisiListu(head.next);
 
 	// D. Upisuje listu u datoteku
-	printf("\n--- Zadatak 3D: Upis liste u datoteku ---\n");
+	printf("Zadatak 3D: Upis liste u datoteku\n");
 	zapisiUDatoteku(&head, "lista.txt");
 
 	// E. Cita listu iz datoteke
-	printf("\n--- Zadatak 3E: Citanje liste iz datoteke ---\n");
+	printf("Zadatak 3E: Citanje liste iz datoteke\n");
 	oslobodiListu(&head);
-	printf("Lista obrisana. Citanje iz datoteke...\n");
+	printf("Lista obrisana. Citanje iz datoteke \n");
 	citajIzDatoteke(&head, "lista.txt");
 	printf("Lista ucitana iz datoteke:\n");
 	ispisiListu(head.next);
