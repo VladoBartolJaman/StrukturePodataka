@@ -1,2 +1,3 @@
 ﻿  Zad.c
-  Vjezba2.vcxproj -> C:\Users\Vlado\Desktop\StrukturePodataka\Vjezba2\x64\Debug\Vjezba2.exe
+C:\Users\Vlado\Desktop\StrukturePodataka\Vjezba2\Vjezba2\Zad.c(253,28): error C2059: syntax error: ')'
+C:\Users\Vlado\Desktop\StrukturePodataka\Vjezba2\Vjezba2\Zad.c(255,1): error C1004: unexpected end-of-file found

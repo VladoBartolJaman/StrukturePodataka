@@ -26,6 +26,7 @@ Position pronadiPoPrezimenu(Position first, const char* surname);
 Position pronadiPrethodni(Position head, const char* surname);
 int obrisiElement(Position head, const char* surname);
 int oslobodiListu(Position head);
+int insertBefore(Position head, char* surname);
 
 int main()
 {
@@ -221,5 +222,53 @@ int oslobodiListu(Position head)
 
 	head->next = NULL;
 	return 0;
+}
+
+//ZADATAK 3
+
+int insertBefore(Position head, char* surname) {
+
+	Position newPerson = NULL;
+
+	//PROVJERA PREZIMENA
+	pronadiPoPrezimenu(head->next, surname);
+
+	dodajNaKraj(head, "Novi", surname, 2000);
+}
+
+int insertAfter(Position head, char* surname) {
+
+	Position newPerson = NULL;
+
+	//PROVJERA PREZIMENA
+	pronadiPoPrezimenu(head, surname);
+
+	dodajNaKraj(head, "Novi", surname, 2000);
+}
+
+// D) otvori datoteku pa fprintf u nju sve elemente liste, zatim zatvori datoteku
+
+// E) otvori datoteku pa fscanf iz nje sve elemente liste, funkcijom dodajnapocetak/kraj ubaci u listu, zatim zatvori datoteku
+
+int sortfun(Position head, ) {
+
+	Position p = head->next;
+	Position q = head;
+	Position temp = NULL;
+
+	while(p->next != NULL){
+	if(strcmp(p->surname, p->next->surname) > 0) {
+
+		temp = p->next;
+		q->next = temp;
+		p->next = temp->next;
+		temp->next = p;
+		q = head;
+		p = q->next;
+	}
+	else {
+		q = p; 
+		p = p->next;
+	}
 }
 
